@@ -20,13 +20,9 @@ Além da base matemática para isso também iremos aprender e praticar muito a c
 Vamos iniciar criando nossas duas primeiras funções básicas, que chamarei de *funções atômicas*, ok?
 
 ```js
-function somar(x, y) {
-  return x + y;
-}
+somar = (x, y)=> x + y;
 
-function subtrair(x, y) {
-  return x - y;
-}
+subtrair = (x, y)=> x - y;
 
 ```
 
@@ -135,11 +131,11 @@ retorna o TOTAL
 Bom a variável `total` será o retorno da nossa função onde receberá a adição de um número X, por Y vezes, por exemplo: `multiplicar(2,3) == 6`. Bom então vamos criar nossa função em JavaScript:
 
 ```js
-function multiplicar(x, y) {
-  var total = 0;
-  var contador = 0;
+const multiplicar = (x, y) => {
+  let total = 0;
+  let contador = 0;
   while(x){
-    total = somar(total, y)
+    total = somar(total, y);
     x = subtrair(x,1);
   }
   return total;
@@ -180,9 +176,9 @@ retorne falso;
 Convertendo esse algoritmo para JavaScript temos:
 
 ```js
-function dividir(x, y) {
-  var total = x;
-  var contador = 1;
+const dividir = (x, y) => {
+  let total = x;
+  let contador = 1;
 
   if(y !== 0){ // não existe divisão por 0
     if(x === y) { // um número dividido por ele mesmo é 1
@@ -230,9 +226,9 @@ retorne falso;
 E finalizando ele em JavaScript fica dessa forma:
 
 ```js
-function dividir(x, y) {
-  var total = x;
-  var contador = 0;
+const dividir = (x, y) => {
+  let total = x;
+  let contador = 0;
 
   if(y !== 0){ // não existe divisão por 0
     if(x === y) { // um número dividido por ele mesmo é 1
@@ -296,7 +292,7 @@ retorne 0;
 ```
 
 ```js
-function porcentagem(x, y) {
+const porcentagem = (x, y) => {
   if(y === 0) {
     return 0;
   }
@@ -408,9 +404,9 @@ retorne falso;
 Agora vamos transformar em JavaScript:
 
 ```js
-function exponenciar(x, y) {
-  var total = x;
-  var contador = x;
+const exponenciar = (x, y) => {
+  let total = x;
+  let contador = x;
   while(contador){
     total = multiplicar(total, x);
     contador = subtrair(contador,1);
@@ -538,7 +534,7 @@ faça de 1 até radicando incrementando o contador em 1
 Agora vamos fazer o teste de mesa:
 
 ```js
-function raiz(indice, radicando) {
+const raiz = (indice, radicando) => {
   for(var contador = indice; contador < radicando; contador++) {
     if( (radicando / contador) == contador)
       return contador;
@@ -663,7 +659,7 @@ Pronto!
 Claro que vamos criar o código em JavaScript para validar nosso algoritmo.
 
 ```js
-function PA(a1, r, n) {
+const PA = (a1, r, n) => {
   var busca = (n – 1);
   var busca_razao = busca * r;
   var elemento = a1 + busca_razao;
